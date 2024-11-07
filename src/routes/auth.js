@@ -29,9 +29,9 @@ authRouter.post("/signup", async (req, res) => {
     res.cookie("token", token, {
       expires: new Date(Date.now() + 8 * 3600000),
       httpOnly:true,
-      sameSite:none,
+      sameSite:'none',
       secure:true,
-      domain:"dev-tinder-ui.vercel.app"
+      domain:".dev-tinder-ui.vercel.app"
     });
 
     res.json({ message: "User Added successfully!", data: savedUser });
@@ -55,6 +55,10 @@ authRouter.post("/login", async (req, res) => {
 
       res.cookie("token", token, {
         expires: new Date(Date.now() + 8 * 3600000),
+        httpOnly:true,
+        sameSite:'none',
+        secure:true,
+        domain:".dev-tinder-ui.vercel.app"
       });
       res.send(user);
     } else {
