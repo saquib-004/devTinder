@@ -31,7 +31,7 @@ authRouter.post("/signup", async (req, res) => {
       httpOnly:true,
       sameSite:'none',
       secure:true,
-      domain:".dev-tinder-ui.vercel.app"
+      domain:"dev-tinder-ui.vercel.app"
     });
 
     res.json({ message: "User Added successfully!", data: savedUser });
@@ -58,7 +58,7 @@ authRouter.post("/login", async (req, res) => {
         httpOnly:true,
         sameSite:'none',
         secure:true,
-        domain:".dev-tinder-ui.vercel.app"
+        domain:"dev-tinder-ui.vercel.app"
       });
       res.send(user);
     } else {
